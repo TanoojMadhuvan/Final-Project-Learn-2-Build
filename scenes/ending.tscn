@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://uml7k65d5l8"]
+
+[ext_resource type="Texture2D" uid="uid://c64wsemw2cwgd" path="res://assets/polluted-city-illustration-vector.jpg" id="1_4ktpe"]
+[ext_resource type="Script" path="res://scripts/ending.gd" id="1_vxhsl"]
+[ext_resource type="AudioStream" uid="uid://cmxdd01j7mq7d" path="res://assets/Sounds/mixkit-female-exclamation-of-pain-2206.mp3" id="3_3womo"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.68, 1.4)
+script = ExtResource("1_vxhsl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -63.0
+offset_top = -180.0
+offset_right = 1227.0
+offset_bottom = 716.0
+texture = ExtResource("1_4ktpe")
+expand_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -9.0
+offset_top = -13.0
+offset_right = 1198.0
+offset_bottom = 720.0
+color = Color(0.181048, 0.206462, 0.0495075, 0.854902)
+
+[node name="Back_Podium_Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 186.0
+offset_bottom = 106.0
+scale = Vector2(1.12533, 1.23234)
+theme_override_font_sizes/font_size = 75
+text = "Retry"
+
+[node name="Result" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 103.0
+offset_right = 1153.0
+offset_bottom = 388.0
+theme_override_colors/font_color = Color(1, 0.784314, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "You Got Slaughtered!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Final_Score" type="Label" parent="."]
+layout_mode = 0
+offset_top = 362.0
+offset_right = 1153.0
+offset_bottom = 507.0
+theme_override_colors/font_color = Color(0.556869, 0.320653, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "Final Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3womo")
+autoplay = true
+
+[connection signal="pressed" from="Back_Podium_Button" to="." method="_on_back_podium_button_pressed"]

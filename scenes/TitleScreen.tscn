@@ -1,0 +1,116 @@
+[gd_scene load_steps=11 format=3 uid="uid://blntcfk4psshs"]
+
+[ext_resource type="Texture2D" uid="uid://dkfqhl6eroi2r" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Background/Shadow.png" id="1_ewdv0"]
+[ext_resource type="Texture2D" uid="uid://cefblgqifqwt4" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Rect/PlayIcon/Default.png" id="2_6hr03"]
+[ext_resource type="Texture2D" uid="uid://d1oaaavqygk0p" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Logotype/ButtonBack.png" id="2_qntx4"]
+[ext_resource type="Texture2D" uid="uid://bljak24p5r38e" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Logotype/Back.png" id="3_n4tyo"]
+[ext_resource type="Texture2D" uid="uid://dar87ucikdldx" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Rect/PlayIcon/Hover.png" id="3_s01g7"]
+[ext_resource type="Texture2D" uid="uid://cefkddufueifh" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Logotype/NameBack.png" id="6_l4u21"]
+[ext_resource type="FontFile" uid="uid://bf63u77itw2gl" path="res://assets/Changa_One/ChangaOne-Regular.ttf" id="7_4nmt3"]
+[ext_resource type="Texture2D" uid="uid://b1ro5jdnwyk7e" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Logotype/Arrow.png" id="7_oxi5v"]
+[ext_resource type="Script" path="res://scripts/start_game.gd" id="7_xohqw"]
+[ext_resource type="PackedScene" uid="uid://bsrik7n8qjdkn" path="res://scenes/Transition.tscn" id="10_nih2l"]
+
+[node name="TextureRect" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ewdv0")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 123.0
+offset_right = 1416.0
+offset_bottom = 238.0
+theme_override_colors/font_color = Color(1, 0.995544, 0.983668, 1)
+theme_override_fonts/font = ExtResource("7_4nmt3")
+theme_override_font_sizes/font_size = 52
+text = "Game made for Learn2Build Hackathon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 813.0
+offset_right = 1416.0
+offset_bottom = 928.0
+theme_override_colors/font_color = Color(1, 0.995544, 0.983668, 1)
+theme_override_fonts/font = ExtResource("7_4nmt3")
+theme_override_font_sizes/font_size = 52
+text = "By Tanooj, Kamran, Priscilla, and Rohan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBack" type="Sprite2D" parent="."]
+position = Vector2(929.367, 592.917)
+scale = Vector2(1.29856, 1.29856)
+texture = ExtResource("2_qntx4")
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(927.54, 446.166)
+scale = Vector2(0.865801, 0.865801)
+texture = ExtResource("3_n4tyo")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 806.457
+offset_top = 525.083
+offset_right = 1059.46
+offset_bottom = 637.083
+texture_normal = ExtResource("2_6hr03")
+texture_hover = ExtResource("3_s01g7")
+stretch_mode = 0
+script = ExtResource("7_xohqw")
+
+[node name="NameBack" type="Sprite2D" parent="."]
+position = Vector2(933.457, 434.083)
+scale = Vector2(0.935166, 0.72902)
+texture = ExtResource("6_l4u21")
+
+[node name="Label" type="Label" parent="NameBack"]
+offset_left = -182.316
+offset_top = -42.4178
+offset_right = 188.684
+offset_bottom = 39.5822
+theme_override_colors/font_color = Color(1, 0.995544, 0.983668, 1)
+theme_override_fonts/font = ExtResource("7_4nmt3")
+theme_override_font_sizes/font_size = 52
+text = "Trash Island"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(684.457, 371.083)
+rotation = -0.785398
+texture = ExtResource("7_oxi5v")
+
+[node name="Arrow2" type="Sprite2D" parent="."]
+position = Vector2(677.457, 505.083)
+rotation = -2.30676
+texture = ExtResource("7_oxi5v")
+
+[node name="Arrow3" type="Sprite2D" parent="."]
+position = Vector2(1186.46, 503.083)
+rotation = 2.35619
+texture = ExtResource("7_oxi5v")
+
+[node name="Arrow4" type="Sprite2D" parent="."]
+position = Vector2(1183.46, 383.083)
+rotation = 1.0472
+texture = ExtResource("7_oxi5v")
+
+[node name="Transition" parent="." instance=ExtResource("10_nih2l")]
+layer = -100
+
+[node name="ColorRect" parent="Transition" index="0"]
+color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
+
+[editable path="Transition"]
