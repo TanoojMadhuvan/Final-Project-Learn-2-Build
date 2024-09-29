@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 
 var targetX = 0;
 var targetY = 0;
-var health = 200;
+var health = 100;
 var alive = true;
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D;

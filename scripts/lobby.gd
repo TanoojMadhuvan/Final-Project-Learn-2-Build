@@ -31,7 +31,7 @@ func spawnOrc():
 	
 	for i in range(rng.randi_range(2 + score*2, 5+ score*2)):	
 		var mob = orc_scene.instantiate();
-		mob.initialize(1020 + rng.randf_range(-30.0, 30.0), 20 + rng.randf_range(-30.0, 30.0), 0.5 + rng.randf_range(0, 0.3), 0.5 + (score *0.2) + rng.randf_range(-0.2, 0.5));
+		mob.initialize(1020 + rng.randf_range(-30.0, 30.0), 20 + rng.randf_range(-30.0, 30.0), 0.5 + rng.randf_range(0, 0.3), 0.3 + (score *0.2) + rng.randf_range(-0.2, 0.3));
 		mob.get_child(0).set_animation("idle");
 		orcs.append(mob);
 		add_child(mob);
@@ -40,7 +40,7 @@ func spawnSoldier():
 	
 	for i in range(rng.randi_range(2+score, 5+ score)):	
 		var mob = soldier_scene.instantiate();
-		mob.initialize(1020 + 2816 - 1006 + rng.randf_range(-100.0, 100.0), 20 + 155 + 167 + rng.randf_range(-100.0, 100.0), 0.5 + rng.randf_range(-0.1, 0.1), 1 + (score *0.2) + rng.randf_range(-0.3, 0.2));
+		mob.initialize(1020 + 2816 - 1006 + rng.randf_range(-100.0, 100.0), 20 + 155 + 167 + rng.randf_range(-100.0, 100.0), 0.5 + rng.randf_range(-0.1, 0.1), 0.8 + (score *0.2) + rng.randf_range(-0.3, 0.2));
 		mob.get_child(0).set_animation("idle");
 		soldiers.append(mob);
 		add_child(mob);

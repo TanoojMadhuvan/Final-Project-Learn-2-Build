@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Trash Island"
+config/name="Trash Island 1.2"
 config/description="Game created by Tanooj, Rohan, Kamran, and Priscilla for the Learn 2 Build Hackathon 2024."
 config/version="1.2"
 run/main_scene="res://scenes/TitleScreen.tscn"
